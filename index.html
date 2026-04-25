@@ -2,30 +2,38 @@
 <html>
 <head>
     <title>Time Zone Converter</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <h1>Time Zone Converter</h1>
 
     <p>
-        This is a simple tool to convert time b/w different countries.
-                        Here is basic layout
+        This is a simple tool to convert time between different countries.
+               Still working on it, but basic layout is ready
     </p>
 
     <hr>
 
     <div>
 
-        <h2>From Time Zone</h2>
+        <h2>'From' Time Zone</h2>
 
-        <p>Select the country and enter the time you wanna convert.</p>
+        <p>Select the country and enter the time you wanna convert</p>
 
         <label>Select Country</label>
         <br>
         <select id="fromZone">
             <option value="Asia/Kolkata">India</option>
             <option value="America/New_York">USA - New York</option>
+            <option value="America/Chicago">USA - Chicago</option>
             <option value="Europe/London">UK - London</option>
+            <option value="Europe/Paris">France - Paris</option>
+            <option value="Europe/Berlin">Germany - Berlin</option>
+            <option value="Asia/Dubai">UAE - Dubai</option>
+            <option value="Asia/Tokyo">Japan - Tokyo</option>
+            <option value="Asia/Singapore">Singapore</option>
+            <option value="Australia/Sydney">Australia - Sydney</option>
         </select>
 
         <br><br>
@@ -46,16 +54,23 @@
 
     <div>
 
-        <h2>To Time Zone</h2>
+        <h2>'To' Time Zone</h2>
 
         <p>Select the country you wish to see the converted time of</p>
 
         <label>Select Country</label>
         <br>
         <select id="toZone">
-            <option value="Asia/Tokyo">Japan - Tokyo</option>
-            <option value="Asia/Dubai">UAE - Dubai</option>
+            <option value="Asia/Kolkata">India</option>
+            <option value="America/New_York">USA - New York</option>
+            <option value="America/Chicago">USA - Chicago</option>
+            <option value="Europe/London">UK - London</option>
             <option value="Europe/Paris">France - Paris</option>
+            <option value="Europe/Berlin">Germany - Berlin</option>
+            <option value="Asia/Dubai">UAE - Dubai</option>
+            <option value="Asia/Tokyo">Japan - Tokyo</option>
+            <option value="Asia/Singapore">Singapore</option>
+            <option value="Australia/Sydney">Australia - Sydney</option>
         </select>
 
     </div>
@@ -73,7 +88,7 @@
         <h2>Result</h2>
 
         <p id="result">
-            Converted time will show here ater clicking convert.
+            Converted time will show here after clicking 'Convert'
         </p>
 
     </div>
@@ -86,19 +101,10 @@
 
         <ul>
             <li>Make sure date and time are selected</li>
-            <li>Time conversion depends on selected country</li>
-            <li>More countries will be added later</li>
+            <li>Time conversion depends on the selected country</li>
         </ul>
 
     </div>
 
-    <br>
-
-    <div>
-        <p>
-            This is still a basic version. Planning to improve UI and add more features.
-        </p>
-    </div>
-    
 </body>
 </html>
