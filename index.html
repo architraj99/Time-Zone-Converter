@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Time Zone Converter</title>
+</head>
+<body>
+
+    <h1>Time Zone Converter</h1>
+
+    <p>
+        This is a simple tool to convert time b/w different countries.
+                        Here is basic layout
+    </p>
+
+    <hr>
+
+    <div>
+
+        <h2>From Time Zone</h2>
+
+        <p>Select the country and enter the time you wanna convert.</p>
+
+        <label>Select Country</label>
+        <br>
+        <select id="fromZone">
+            <option value="Asia/Kolkata">India</option>
+            <option value="America/New_York">USA - New York</option>
+            <option value="Europe/London">UK - London</option>
+        </select>
+
+        <br><br>
+
+        <label>Select Date</label>
+        <br>
+        <input type="date" id="date">
+
+        <br><br>
+
+        <label>Select Time</label>
+        <br>
+        <input type="time" id="time">
+
+    </div>
+
+    <br>
+
+    <div>
+
+        <h2>To Time Zone</h2>
+
+        <p>Select the country you wish to see the converted time of</p>
+
+        <label>Select Country</label>
+        <br>
+        <select id="toZone">
+            <option value="Asia/Tokyo">Japan - Tokyo</option>
+            <option value="Asia/Dubai">UAE - Dubai</option>
+            <option value="Europe/Paris">France - Paris</option>
+        </select>
+
+    </div>
+
+    <br><br>
+
+    <div>
+        <button>Convert Time</button>
+    </div>
+
+    <br>
+
+    <div>
+
+        <h2>Result</h2>
+
+        <p id="result">
+            Converted time will show here ater clicking convert.
+        </p>
+
+    </div>
+
+    <br>
+
+    <div>
+
+        <h3>NOTE</h3>
+
+        <ul>
+            <li>Make sure date and time are selected</li>
+            <li>Time conversion depends on selected country</li>
+            <li>More countries will be added later</li>
+        </ul>
+
+    </div>
+
+    <br>
+
+    <div>
+        <p>
+            This is still a basic version. Planning to improve UI and add more features.
+        </p>
+    </div>
+    
+</body>
+</html>
