@@ -5,119 +5,96 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        <div class="container"></div>
-    <h1>Time Zone Converter</h1>
 
-    <p>
-        This is a simple tool to convert time between different countries.
-    </p>
+    <div class="container">
 
-    <hr>
-    
-    <div class="section">
+        <h1>Time Zone Converter</h1>
 
-        <h2>'From' Time Zone</h2>
+        <p>This tool converts time between different countries.</p>
 
-        <p>Select the country and enter the time you wish to convert</p>
+        <hr>
 
-        <label>Select Country</label>
-        <br>
-        <select id="fromZone">
-            <option value="Asia/Kolkata">India</option>
-            <option value="America/New_York">USA - New York</option>
-            <option value="America/Chicago">USA - Chicago</option>
-            <option value="Europe/London">UK - London</option>
-            <option value="Europe/Paris">France - Paris</option>
-            <option value="Europe/Berlin">Germany - Berlin</option>
-            <option value="Asia/Dubai">UAE - Dubai</option>
-            <option value="Asia/Tokyo">Japan - Tokyo</option>
-            <option value="Asia/Singapore">Singapore</option>
-            <option value="Australia/Sydney">Australia - Sydney</option>
-        </select>
+        <div class="row">
 
-        <br><br>
+            <div class="section">
+                <h2>'From' Time Zone</h2>
 
-        <label>Select Date</label>
-        <br>
-        <input type="date" id="date">
+                <label>Choose Time Zone</label>
+                <br>
+                <select id="fromZone">
+                    <option value="Asia/Kolkata">India</option>
+                    <option value="America/New_York">USA - New York</option>
+                    <option value="America/Chicago">USA - Chicago</option>
+                    <option value="America/New_York">USA - Vermont (Eastern Time)</option>
+                    <option value="Europe/London">UK - London</option>
+                    <option value="Europe/Paris">France - Paris</option>
+                    <option value="Europe/Berlin">Germany - Berlin</option>
+                    <option value="Europe/Amsterdam">Netherlands (Amsterdam)</option>
+                    <option value="Asia/Dubai">UAE - Dubai</option>
+                    <option value="Asia/Tokyo">Japan - Tokyo</option>
+                    <option value="Asia/Singapore">Singapore</option>
+                    <option value="Australia/Sydney">Australia - Sydney</option>
+                </select>
 
-        <br><br>
+                <br><br>
 
-        <label>Select Time</label>
-        <br>
-        <input type="time" id="time">
+                <label>Date</label>
+                <br>
+                <input type="date" id="date">
 
-        <p class="small-note"> You can enter time manually or use current time button!</p>
+                <br><br>
 
-    </div>
+                <label>Time</label>
+                <br>
+                <input type="time" id="time">
+            </div>
 
+            <div class="section">
+                <h2>To Time Zone</h2>
 
-    <div class="section">
+                <label>Choose Time Zone</label>
+                <br>
+                <select id="toZone">
+                    <option value="Asia/Kolkata">India</option>
+                    <option value="America/New_York">USA - New York</option>
+                    <option value="America/Chicago">USA - Chicago</option>
+                    <option value="America/New_York">USA - Vermont (Eastern Time)</option>
+                    <option value="Europe/London">UK - London</option>
+                    <option value="Europe/Paris">France - Paris</option>
+                    <option value="Europe/Berlin">Germany - Berlin</option>
+                    <option value="Europe/Amsterdam">Netherlands (Amsterdam)</option>
+                    <option value="Asia/Dubai">UAE - Dubai</option>
+                    <option value="Asia/Tokyo">Japan - Tokyo</option>
+                    <option value="Asia/Singapore">Singapore</option>
+                    <option value="Australia/Sydney">Australia - Sydney</option>
+                </select>
+            </div>
 
-        <h2>'To' Time Zone</h2>
-
-        <p>Select the country you wish to see the converted time of</p>
-
-        <label>Select Country</label>
-        <br>
-        <select id="toZone">
-            <option value="Asia/Kolkata">India</option>
-            <option value="America/New_York">USA - New York</option>
-            <option value="America/Chicago">USA - Chicago</option>
-            <option value="Europe/London">UK - London</option>
-            <option value="Europe/Paris">France - Paris</option>
-            <option value="Europe/Berlin">Germany - Berlin</option>
-            <option value="Asia/Dubai">UAE - Dubai</option>
-            <option value="Asia/Tokyo">Japan - Tokyo</option>
-            <option value="Asia/Singapore">Singapore</option>
-            <option value="Australia/Sydney">Australia - Sydney</option>
-        </select>
-
-    </div>
-
-    <div class="action-box">
-
-        <h2>Actions</h2>
-    
-        <button onclick="convertTime()">Convert Time</button>
-        <button onclick="useCurrentTime()">Use Current Time</button>
-        <button onclick="swapZones()">Swap Time Zones</button>
-
-        <p class="small-note">Swap will switch the selected countries</p>
-    </div>
-
-    <br>
-
-    <div class="result-box">
-
-        <h2>Conversion Result</h2>
-        
-        <p id="resultMessage">No Conversion Done Yet</p>
-
-        <div class="summary">
-            <p><b>From: </b> <span id="fromName">-</span></p>
-            <p><b>To: </b> <span id="toName">-</span></p>
-            <p><b>Original: </b> <span id="orginalTime">-</span></p>
-            <p><b>Converted: </b> <span id="convertedTime">-</span></p>
         </div>
 
-    </div>
+        <div class="action-box">
+            <button onclick="convertTime()">Convert</button>
+            <button onclick="useCurrentTime()">Use Current Time</button>
+            <button onclick="swapZones()">Swap</button>
+            <button onclick="resetAll()">Reset</button>
+        </div>
 
-    <div class="history-box">
+        <div class="result-box">
+            <h2>Result</h2>
+            <p id="resultMessage">No conversion done yet.</p>
 
-        <h2>Last Conversion</h2>
+            <div class="summary">
+                <p><b>From:</b> <span id="fromName">-</span></p>
+                <p><b>To:</b> <span id="toName">-</span></p>
+                <p><b>Original:</b> <span id="originalTime">-</span></p>
+                <p><b>Converted:</b> <span id="convertedTime">-</span></p>
+            </div>
+        </div>
 
-        <p id="historyText">Nothing Converted Yet</p>
-
-    </div>
-
-    <div class="tip-box">
-
-        <h3>Small Tip</h3>
-
-        <p>Time may change based on daylight saving in some countries.
-                    So always check date properly!
-        </p>
+        <div class="history-box">
+            <h2>Last Conversion</h2>
+            <p id="historyText">Nothing Converted Yet.</p>
+        </div>
 
     </div>
 

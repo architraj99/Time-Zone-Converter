@@ -10,12 +10,14 @@ function convertTime() {
     let time = document.getElementById("time").value;
 
     if (date === "" || time === "") {
-        document.getElementById("resultMessage").innerText = "Please Select Date And Time First";
+        document.getElementById("resultMessage").innerText =
+            "Please select date and time first";
         return;
     }
 
     if (fromZone === toZone) {
-        document.getElementById("resultMessage").innerText = "'From' and 'To' time zones are same"
+        document.getElementById("resultMessage").innerText =
+            "Both time zones are same";
         return;
     }
 
@@ -23,60 +25,56 @@ function convertTime() {
 
     let fromDate = new Date(dateTimeString);
 
-    let converted = fromDate.toLocaleString("en-US", { 
-            timeZone: toZone,
-            weekday: "short",
-            year: "numeric",
-            month: "short",
-            day: "numeric",
-            hour: "numeric",
-            minute: "2-digit"
+    let converted = fromDate.toLocaleString("en-US", {
+        timeZone: toZone
     });
 
-    let original = fromDate.toLocaleString("en-US",
-    {
-        timeZone: fromZone,
-        weekday: "short",
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-        hour: "numeric",
-        minute: "2-digit"
-    });
+    let fromName = getSelectedText("fromZone");
+    let toName = getSelectedText("toZone");
 
-        let fromName = getSelectedText("fromZone");
-        let toName = getSelectedText("toZone");
+    document.getElementById("resultMessage").innerText =
+        "Conversion completed successfully";
 
-        document.getElementById("resultMessage").innerText = "Conversion Successful";
+    document.getElementById("fromName").innerText = fromName;
+    document.getElementById("toName").innerText = toName;
+    document.getElementById("originalTime").innerText = date + " " + time;
+    document.getElementById("convertedTime").innerText = converted;
 
-        document.getElementById("fromName").innerText = fromName;
-        document.getElementById("toName").innerText = toName;
-        document.getElementById("originalTime").innerText = original;
-        document.getElementById("convertedTime").innerText = converted;
-        document.getElementById("historyText").innerText = fromName + " to " + toName + " was converted recently.";
+    document.getElementById("historyText").innerText =
+        fromName + "--->" + toName;
 }
 
 function useCurrentTime() {
     let now = new Date();
-    let year = now.getFullYear();
-    let month = String(now.getMonth() + 1).padStart(2,"0");
-    let day = String(now.getDate()).padStart(2,"0");
 
-    let hours = String(now.getHours()).padStart(2,"0");
-    let minutes = String(now.getMinutes()).padStart(2,"0");
-    document.getElementById("date").value = year + "-" + month + "-" + day;
-    document.getElementById("time").value = hours + ":" + minutes;
-    document.getElementById("resultMessage").innerText = "Current date and time added";
+    document.getElementById("date").value =
+        now.toISOString().split("T")[0];
+
+    document.getElementById("time").value =
+        now.toTimeString().slice(0,5);
 }
 
 function swapZones() {
-    let fromSelect = document.getElementById("fromZone");
-    let toSelect = document.getElementById("toZone");
+    let from = document.getElementById("fromZone");
+    let to = document.getElementById("toZone");
 
-    let oldFrom = fromSelect.value;
-    let oldTo = toSelect.value;
+    let temp = from.value;
+    from.value = to.value;
+    to.value = temp;
+}
 
-    fromSelect.value = oldTo;
-    toSelect.value = oldFrom;
-    document.getElementById("resultMessage").innerText = "Time Zones Swapped";
+function resetAll() {
+    document.getElementById("date").value = "";
+    document.getElementById("time").value = "";
+
+    document.getElementById("resultMessage").innerText =
+        "No conversion done yet.";
+
+    document.getElementById("fromName").innerText = "-";
+    document.getElementById("toName").innerText = "-";
+    document.getElementById("originalTime").innerText = "-";
+    document.getElementById("convertedTime").innerText = "-";
+
+    document.getElementById("historyText").innerText =
+        "Nothing converted yet.";
 }

@@ -1,113 +1,78 @@
 body {
     font-family: Arial;
-    margin:0;
-    background-color: #c0c0c0;
-    padding: 0;
-    line-height: 1.5;
+    background-color: #ffa704;
+    margin: 0;
 }
 
 .container {
-    max-width: 850px;
+    max-width: 900px;
     margin: 40px auto;
     padding: 20px;
 }
 
 h1 {
     text-align: center;
-    color: #222;
+}
+
+.row {
+    display: flex;
+    gap: 20px;
 }
 
 .section {
-    background-color: rgb(245, 90, 0);
+    background: rgb(255, 186, 58);
     padding: 18px;
-    margin-top: 20px;
-    border: 1px solid #ddd;
     border-radius: 10px;
+    width: 50%;
+}
+
+select, input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
 }
 
 .action-box {
-    background-color: #fd7a00;
+    background: rgb(255, 206, 73);
     padding: 18px;
     margin-top: 20px;
-    border: 1px solid #ddd;
     border-radius: 10px;
 }
 
+button {
+    padding: 10px;
+    margin-right: 8px;
+    background-color: #2f6fed;
+    color: rgb(0, 0, 0);
+    border: none;
+}
+
+button:hover {
+    background-color: #2459c7;
+}
+
 .result-box {
-    background-color: rgb(255, 230, 0);
+    background: rgb(187, 255, 110);
     padding: 18px;
     margin-top: 20px;
     border-left: 5px solid #2f6fed;
     border-radius: 10px;
 }
 
-
 .history-box {
-    background-color: rgb(238, 135, 0);
+    background: rgb(184, 255, 117);
     padding: 18px;
     margin-top: 20px;
     border-radius: 10px;
-}
-
-.tip-box {
-    background-color: #e8f80096;
-    padding: 18px;
-    margin-top: 20px;
-    border: 1px solid #e5dca8;
-    border-radius: 10px;
-}
-
-
-select,
-input {
-    padding: 9px;
-    margin-top: 6px;
-    min-width: 240px;
-}
-
-button {
-    background-color: #2f6fed;
-    color: white;
-    border: none;
-    padding: 10px 14px;
-    margin-right: 8px;
-    margin-top: 10px;
-    border-radius: 5px;
-}
-
-button:hover {
-    background-color: #2459c7;
-    cursor: pointer;
-}
-
-.small-note {
-    font-size: 14px;
-    color: #666;
-}
-
-.summary {
-    background-color: #f7f9fc;
-    padding: 14px;
-    margin-top: 12px;
-    border-left: 4px solid #2f6fed;
-}
-
-.summary p {
-    margin: 8px 0;
-}
-
-#resultMessage {
-    font-weight: bold;
 }
 
 @media (max-width: 700px) {
-    .container {
-        width: 90%;
+    .row {
+        display: block;
     }
 
-    select,
-    input,
-    button {
+    .section {
         width: 100%;
+        margin-top: 15px;
     }
 }
