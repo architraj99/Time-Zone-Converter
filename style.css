@@ -8,6 +8,10 @@ h1 {
     color: #222;
 }
 
+p {
+    color: #555;
+}
+
 div {
     background-color: rgb(255, 134, 20);
     padding: 15px;
@@ -22,17 +26,36 @@ button {
     margin-top: 5px;
 }
 
+select,
+input {
+    min-width: 230px;
+}
+
 button {
     background-color: #2f6fed;
     color: white;
     border: none;
+    margin-right: 8px;
+    margin-bottom: 8px;
 }
 
 button:hover {
     background-color: #2459c7;
+    cursor: pointer;
 }
 
-/* NEW STYLES */
+.action-box {
+    background-color: #ffffff;
+}
+
+.action-box button {
+    min-width: 150px;
+}
+
+.small-note {
+    font-size: 14px;
+    color: #666;
+}
 
 .result-box {
     background-color: rgb(255, 230, 0);
@@ -53,10 +76,15 @@ button:hover {
 }
 
 .history-box {
-    background-color: rgb(246, 250, 0);
+    background-color: rgb(186, 189, 3);
     padding: 18px;
     margin-top: 20px;
     border: 1px solid #000000;
+}
+
+.tip-box {
+    background-color: #fffdf5;
+    border: 1px solid #e5dca8;
 }
 
 #resultMessage {
