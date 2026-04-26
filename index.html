@@ -10,7 +10,6 @@
 
     <p>
         This is a simple tool to convert time between different countries.
-               Still working on it, but basic layout is ready
     </p>
 
     <hr>
@@ -83,28 +82,32 @@
 
     <br>
 
-    <div>
+    <!-- NEW RESULT SECTION-->
+    <div class="result-box">
 
-        <h2>Result</h2>
+        <h2>Conversion Result</h2>
+        <p id="resultMessage">No Comparison Done Yet</p>
 
-        <p id="result">
-            Converted time will show here after clicking 'Convert'
-        </p>
+        <div class="summary">
+            <p><b>From: </b> <span id="fromName">-</span></p>
+            <p><b>To: </b> <span id="toName">-</span></p>
+            <p><b>Original: </b> <span id="orginalTime">-</span></p>
+            <p><b>Converted: </b> <span id="convertedTime">-</span></p>
+        </div>
+
+    </div>
+
+    <br> 
+
+    <!-- NEW HISTORY SECTION-->
+    <div class="history-box">
+
+        <h2>Last Conversion</h2>
+
+        <p id="historyText">Nothing Converted Yet</p>
 
     </div>
 
-    <br>
-
-    <div>
-
-        <h3>NOTE</h3>
-
-        <ul>
-            <li>Make sure date and time are selected</li>
-            <li>Time conversion depends on the selected countries</li>
-        </ul>
-
-    </div>
 
     <script src="script.js"></script>
 

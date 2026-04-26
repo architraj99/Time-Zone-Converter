@@ -27,3 +27,42 @@ button {
     color: white;
     border: none;
 }
+
+button:hover {
+    background-color: #2459c7;
+}
+
+/* NEW STYLES */
+
+.result-box {
+    background-color: rgb(255, 230, 0);
+    padding: 18px;
+    margin-top: 20px;
+    border: 1px solid #000000;
+}
+
+.summary {
+    background-color: #f7f9fc;
+    padding: 12px;
+    margin-top: 10px;
+    border-left: 4px solid #2f6fed;
+}
+
+.summary p {
+    margin: 8px 0;
+}
+
+.history-box {
+    background-color: rgb(246, 250, 0);
+    padding: 18px;
+    margin-top: 20px;
+    border: 1px solid #000000;
+}
+
+#resultMessage {
+    font-weight: bold;
+}
+
+#historyText {
+    color: #555;
+}
